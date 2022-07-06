@@ -45,7 +45,8 @@ class Counter extends Component {
     render() {
         return (
           <div className="counter">
-             <CounterButton by={1} incrementMethod={this.increment}/>
+             <CounterButton by={1} incrementMethod={this.increment}/> // passing in the method as a property to the child component
+             // (so that we can call a parent method from a child component)
              <CounterButton by={5} incrementMethod={this.increment}/>
              <CounterButton by={10} incrementMethod={this.increment}/>
              <span className="count">{this.state.counter}</span> 
@@ -91,7 +92,8 @@ class CounterButton extends Component {
         counter: this.state.counter + this.props.by
     });
     
-    this.props.incrementMethod(this.props.by);
+    this.props.incrementMethod(this.props.by); // 同时call parent's incrementMethod, so to increase the state in the parent
+    // (call a parent method from a child component)
   }
 }
 
