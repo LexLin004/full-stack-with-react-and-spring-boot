@@ -35,13 +35,10 @@ import './Counter.css'
 class Counter extends Component {
 
     constructor() {
-        
         super(); //Error 1
-  
         this.state = {
             counter : 0
         }
-
         this.increment = this.increment.bind(this);
     }
   
@@ -69,11 +66,9 @@ class CounterButton extends Component {
   //state => counter 0
   constructor() {
       super(); //Error 1
-
       this.state = {
           counter : 0
       }
-
       this.increment = this.increment.bind(this);
   }
   
@@ -98,7 +93,6 @@ class CounterButton extends Component {
     
     this.props.incrementMethod(this.props.by);
   }
-
 }
 
 CounterButton.defaultProps = {
